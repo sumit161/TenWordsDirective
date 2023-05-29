@@ -1,0 +1,46 @@
+<label for="">fname</label>
+<input type="text" #fname class="form-control" />
+<label for="">lname</label>
+<input type="text" #lname class="form-control" />
+<label for="">contact</label>
+<input type="text" #contact class="form-control" />
+<label for="">email</label>
+<input type="text" #email class="form-control" />
+<div class="mt-4 text-right">
+  <button
+    mat-raised-button
+    color="primary"
+    *ngIf="!isboolean"
+    (click)="OnAddStudent(fname, lname, contact, email)"
+  >
+    Add
+  </button>
+  {{isboolean}}
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="update(fname, lname, contact, email)"
+    *ngIf="isboolean"
+  >
+    update
+  </button>
+
+  <!-- <button class="btn btn-primary mt-4" >Add</button> -->
+</div>
+<button
+class="btn btn-primary " style="margin-top: -55px;"
+*ngIf="!isboolean"
+(click)="Onpatch(fname, lname, contact, email)"
+>
+patch
+</button>
+<h1>
+  Process for update(Edit) deta
+  <p>1.press Edit button</p>
+  <p>2.press Patch button</p>
+  <p>3.press update button</p>
+</h1>
+{{p | json}}
+<!-- {{k | json}}
+{{k}} -->
+<!-- {{newobj}} -->

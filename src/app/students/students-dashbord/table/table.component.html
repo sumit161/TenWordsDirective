@@ -1,0 +1,123 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>sr no</th>
+      <th>fname</th>
+      <th>lname</th>
+      <th>contact</th>
+      <th>email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of array; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.fname }}</td>
+      <td>{{ item.lname }}</td>
+      <td>{{ item.contact }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button
+          mat-flat-button
+          color="warn"
+          (click)="OnEdit(item)"
+          class="bg-info"
+        >
+          Edit
+        </button>
+      </td>
+
+      <td>
+        <button
+          mat-flat-button
+          color="warn"
+          (click)="OnDelete(item.id, item.fname)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- {{array|json}} -->
+<!-- {{newarr[0].fname}} -->
+<!-- -->
+<!-- {{array[0].fname}}
+ {{dataSource[0].fname}} -->
+<!-- matCellDef -->
+
+<!--    <table mat-table [dataSource]="array" class="mat-elevation-z8">
+
+  <ng-container *ngFor="let item of array" matColumnDef="fname">
+    <th mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lname">
+    <th mat-header-cell *matHeaderCellDef> Last name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="contact">
+    <th mat-header-cell *matHeaderCellDef>Contact</th>
+    <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" class="icons" aria-label="Example edit icon" fontIcon="edit"></mat-icon> {{element.edit}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delelte </th>
+    <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" class="icons" aria-label="Example edit icon" fontIcon="edit"></mat-icon> {{element.delete}} </td>
+  </ng-container>
+
+
+
+  <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> -->
+
+<!-- <mat-table [dataSource]="array">
+  <ng-container matColumnDef="fname">
+    <mat-header-cell *matHeaderCellDef> fname </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.fname}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lname">
+    <mat-header-cell *matHeaderCellDef> lname </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.lname}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="contact">
+    <mat-header-cell *matHeaderCellDef> contact </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.contact}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+    <mat-header-cell *matHeaderCellDef> edit </mat-header-cell>
+    <mat-cell *matCellDef="let row"> <mat-icon aria-hidden="false" class="icons" aria-label="Example edit icon" fontIcon="edit"></mat-icon> {{row.edit}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef> delete </mat-header-cell>
+    <mat-cell *matCellDef="let row"><mat-icon aria-hidden="false" class="icons" aria-label="Example edit icon" fontIcon="edit"></mat-icon> {{row.delete}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="[ 'fname', 'lname', 'email', 'contact', 'edit', 'delete'];"></mat-header-row>
+  <mat-row *matRowDef="let row ; columns: [ 'fname', 'lname', 'email', 'contact', 'edit', 'delete'];"></mat-row>
+</mat-table> -->
